@@ -4,13 +4,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoHiit from "../../img/logo-hiit.png"
 import CartWidget from '../cartWidget/cartWidget';
+import styles from "./styles.module.css"
 
 
 function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <Navbar collapseOnSelect expand="lg" className={styles.navBar}>
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="#home" className={styles.navBarHiit}>
                     <img src={LogoHiit}
                         alt="Logo"
                         width="120"
@@ -20,10 +21,10 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#accesorios">Accesorios</Nav.Link>
-                        <Nav.Link href="#suplementos">Suplementos</Nav.Link>
-                        <NavDropdown title="Indumentaria" id="collapsible-nav-dropdown">
+                        <Nav.Link href="#home" className={styles.navHome}>Home</Nav.Link>
+                        <Nav.Link href="#accesorios" className={styles.navAccesorios}>Accesorios</Nav.Link>
+                        <Nav.Link href="#suplementos" className={styles.navSuplementos}>Suplementos</Nav.Link>
+                        <NavDropdown title="Indumentaria" id="collapsible-nav-dropdown" className={styles.navIndumentaria}>
                             <NavDropdown.Item href="#action/3.1">Femenina</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.2">
@@ -32,7 +33,7 @@ function NavBar() {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link eventKey={2} href="#memes" className={styles.navCarrito}>
                             <CartWidget />
                         </Nav.Link>
                     </Nav>
