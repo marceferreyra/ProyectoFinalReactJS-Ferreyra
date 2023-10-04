@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoHiit from "../../img/logo-hiit.png"
+import CartWidget from '../cartWidget/cartWidget';
+
 
 function NavBar() {
     return (
@@ -31,7 +33,7 @@ function NavBar() {
                     </Nav>
                     <Nav>
                         <Nav.Link eventKey={2} href="#memes">
-                            Carrito
+                            <CartWidget />
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
