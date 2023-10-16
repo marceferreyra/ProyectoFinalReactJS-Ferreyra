@@ -22,7 +22,29 @@ function NavBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#home" className={styles.navHome}>Home</Nav.Link>
-                        <Nav.Link href="#accesorios" className={styles.navAccesorios}>Accesorios</Nav.Link>
+                        <NavDropdown title="Accesorios" id="collapsible-nav-dropdown" className={styles.navAccesorios}>
+                            <NavDropdown.Item href="#action/3.1">Bandas Elásticas</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.2">
+                                Colchonetas
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.3">
+                                Mancuernas
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                Tobilleras
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.5">
+                                Sogas
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.6">
+                                Guantes
+                            </NavDropdown.Item>
+                        </NavDropdown>
                         <Nav.Link href="#suplementos" className={styles.navSuplementos}>Suplementos</Nav.Link>
                         <NavDropdown title="Indumentaria" id="collapsible-nav-dropdown" className={styles.navIndumentaria}>
                             <NavDropdown.Item href="#action/3.1">Femenina</NavDropdown.Item>

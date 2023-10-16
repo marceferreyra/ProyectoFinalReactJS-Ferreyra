@@ -1,4 +1,12 @@
-.saludo {
-        margin-top: 30px;
+.cardImg  {
+        height: 300px;
+}
+
+.titulo {
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 100;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: rgb(52, 49, 49);
         text-align: center;
 }
