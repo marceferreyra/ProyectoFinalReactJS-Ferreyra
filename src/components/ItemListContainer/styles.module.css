@@ -10,3 +10,7 @@
         color: rgb(52, 49, 49);
         text-align: center;
 }
+
+.card {
+        justify-content: space-evenly;
+}

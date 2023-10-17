@@ -5,13 +5,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoHiit from "../../img/logo-hiit.png"
 import CartWidget from '../cartWidget/cartWidget';
 import styles from "./styles.module.css"
+import { Link } from 'react-router-dom';
 
 
 function NavBar() {
     return (
         <Navbar collapseOnSelect expand="lg" className={styles.navBar}>
             <Container>
-                <Navbar.Brand href="#home" className={styles.navBarHiit}>
+                <Navbar.Brand href="/" className={styles.navBarHiit}>
                     <img src={LogoHiit}
                         alt="Logo"
                         width="120"
@@ -21,23 +22,25 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home" className={styles.navHome}>Home</Nav.Link>
+                        <Nav.Link href="/" className={styles.navHome}>Home</Nav.Link>
                         <NavDropdown title="Accesorios" id="collapsible-nav-dropdown" className={styles.navAccesorios}>
-                            <NavDropdown.Item href="#action/3.1">Bandas Elásticas</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/bandas-elasticas">
+                                Bandas Elásticas
+                            </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.2">
+                            <NavDropdown.Item as={Link} to="/colchonetas">
                                 Colchonetas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.3">
+                            <NavDropdown.Item as={Link} to="/mancuernas">
                                 Mancuernas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item as={Link} to="/tobilleras">
                                 Tobilleras
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.5">
+                            <NavDropdown.Item as={Link} to="/sogas">
                                 Sogas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />

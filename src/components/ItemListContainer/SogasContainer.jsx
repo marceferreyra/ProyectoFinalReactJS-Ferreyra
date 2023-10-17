@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from "./styles.module.css";
-import BandasElasticas from "../Item/Item.jsx";
+import Sogas from '../Item/Sogas';
 import { Card } from 'antd';
 const { Meta } = Card;
 
 
 
-function ItemListContainer() {
+function SogasContainer() {
     return (
         <div>
-            <h1 className={styles.titulo}>Bandas elásticas </h1> 
+            <h1 className={styles.titulo}>Mancuernas</h1> 
             <hr />
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {BandasElasticas.map((producto) => (
+            <div style={{ display: 'flex', flexWrap: 'wrap' }} className={styles.card}>
+                {Sogas.map((producto) => (
                     <Card 
                         key={producto.id}
                         hoverable
@@ -30,4 +30,4 @@ function ItemListContainer() {
     );
 }
 
-export default ItemListContainer;
+export default SogasContainer;
