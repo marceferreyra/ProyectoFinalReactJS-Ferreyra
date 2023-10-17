@@ -6,6 +6,7 @@ import ColchonetasContainer from './components/ItemListContainer/ColchonetasCont
 import MancuernasContainer from './components/ItemListContainer/MancuernasContainer';
 import TobillerasContainer from './components/ItemListContainer/TobillerasConatiner';
 import SogasContainer from './components/ItemListContainer/SogasContainer';
+import GuantesContainer from './components/ItemListContainer/GuantesContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';  
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/mancuernas" element={<MancuernasContainer />} />
         <Route path="/tobilleras" element={<TobillerasContainer />} />
         <Route path="/sogas" element={<SogasContainer />} />
+        <Route path="/guantes" element={<GuantesContainer />} />
       </Routes>
     </BrowserRouter>
   );

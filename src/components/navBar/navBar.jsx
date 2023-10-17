@@ -44,7 +44,7 @@ function NavBar() {
                                 Sogas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.6">
+                            <NavDropdown.Item as={Link} to="guantes">
                                 Guantes
                             </NavDropdown.Item>
                         </NavDropdown>
