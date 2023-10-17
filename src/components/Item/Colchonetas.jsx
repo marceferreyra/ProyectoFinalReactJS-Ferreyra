@@ -1,4 +1,4 @@
-import Colchoneta from "../../img/Colchoneta.jpg"
+import Colchoneta from "../../img/colchoneta.jpg"
 import ColchonetaAltaDensidad from "../../img/colchoneta-alta-densidad.jpg"
 import ColchonetaPlegable from "../../img/colchoneta-plegable.jpg"
 
