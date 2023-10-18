@@ -1,5 +1,5 @@
 .navBar {
-    background-color: #9b9b9b !important;
+    background-color: #000c43c9 !important;
     padding-right: 10px;
     width: 100%;
 }
@@ -17,9 +17,10 @@
     font-weight: 700;
 }
 
-.navAccesorios {
+.navProductos {
     padding-left: 30px !important;
     font-weight: 700;
+    color: black;
 }
 
 .navSuplementos {

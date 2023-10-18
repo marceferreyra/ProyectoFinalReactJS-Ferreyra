@@ -22,29 +22,29 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/" className={styles.navHome}>Home</Nav.Link>
-                        <NavDropdown title="Accesorios" id="collapsible-nav-dropdown" className={styles.navAccesorios}>
-                            <NavDropdown.Item as={Link} to="/bandas-elasticas">
+                    <Nav.Link href="#home" className={styles.navHome}>Home</Nav.Link>
+                        <NavDropdown title="Productos" id="collapsible-nav-dropdown" className={styles.navProductos}>
+                            <NavDropdown.Item href="#action/3.1">
                                 Bandas Elásticas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item as={Link} to="/colchonetas">
+                            <NavDropdown.Item href="#action/3.2">
                                 Colchonetas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item as={Link} to="/mancuernas">
+                            <NavDropdown.Item href="#action/3.3">
                                 Mancuernas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item as={Link} to="/tobilleras">
+                            <NavDropdown.Item href="#action/3.4">
                                 Tobilleras
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item as={Link} to="/sogas">
+                            <NavDropdown.Item href="#action/3.5">
                                 Sogas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item as={Link} to="guantes">
+                            <NavDropdown.Item href="#action/3.6">
                                 Guantes
                             </NavDropdown.Item>
                         </NavDropdown>

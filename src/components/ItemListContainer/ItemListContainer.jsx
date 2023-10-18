@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from "./styles.module.css";
-import Guantes from "../Item/Guantes";
+import Products from "../Catalogo/Catalogo.jsx";
 import { Card } from 'antd';
 const { Meta } = Card;
 
 
 
-function GuantesContainer() {
+function ItemListContainer() {
     return (
         <div>
-            <h1 className={styles.titulo}>Guantes </h1> 
+            <h1 className={styles.titulo}>Productos</h1> 
             <hr />
             <div style={{ display: 'flex', flexWrap: 'wrap' }} className={styles.card}>
-                {Guantes.map((producto) => (
+                {Products.map((producto) => (
                     <Card 
                         key={producto.id}
                         hoverable
@@ -20,9 +20,9 @@ function GuantesContainer() {
                             width: 300,
                             margin: '10px',
                         }}
-                        cover={<img alt={producto.nombre} src={producto.image} className={styles.cardImg}/>}
+                        cover={<img alt={producto.product} src={producto.image} className={styles.cardImg}/>}
                     >
-                        <Meta title={producto.nombre} description={`Precio: $${producto.precio}`} />
+                        <Meta title={producto.product} description={`Precio: $${producto.price}`} />
                     </Card>
                 ))}
             </div>
@@ -30,4 +30,4 @@ function GuantesContainer() {
     );
 }
 
-export default GuantesContainer;
+export default ItemListContainer;
