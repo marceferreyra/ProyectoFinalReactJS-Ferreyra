@@ -280,7 +280,7 @@ const Products = [
 
     {
         id: 31,
-        product: "Tobilleras 1.55kg",
+        product: "Tobilleras 1.5kg",
         price: 4500,
         category: "tobilleras",
         image: Tobillera15kg

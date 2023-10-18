@@ -10,6 +10,11 @@ function App() {
   return (
     <>
       <NavBar />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<ItemListContainer />} />          
+        </Routes>
+      </BrowserRouter>
       <ItemListContainer />
     </>
 
