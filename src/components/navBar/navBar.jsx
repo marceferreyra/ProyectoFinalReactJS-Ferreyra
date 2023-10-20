@@ -5,28 +5,31 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoHiit from "../../img/logo-hiit.png"
 import CartWidget from '../cartWidget/cartWidget';
 import styles from "./styles.module.css"
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 
 function NavBar() {
     return (
         <Navbar collapseOnSelect expand="lg" className={styles.navBar}>
             <Container>
-                <Navbar.Brand href="/" className={styles.navBarHiit}>
+                <NavLink to="/"><Navbar.Brand className={styles.navBarHiit}>
                     <img src={LogoHiit}
                         alt="Logo"
                         width="120"
                         height="50"
                     />
-                </Navbar.Brand>
+                </Navbar.Brand></NavLink>
+                
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                    <Nav.Link href="#home" className={styles.navHome}>Home</Nav.Link>
+                        <NavLink to="/" className={styles.navHome}><Nav.Link>Home</Nav.Link></NavLink>
+                        
                         <NavDropdown title="Productos" id="collapsible-nav-dropdown" className={styles.navProductos}>
-                            <NavDropdown.Item href="#action/3.1">
+                            <NavLink ><NavDropdown.Item href="#action/3.1">
                                 Bandas Elásticas
-                            </NavDropdown.Item>
+                            </NavDropdown.Item></NavLink>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.2">
                                 Colchonetas
@@ -46,14 +49,6 @@ function NavBar() {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.6">
                                 Guantes
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link href="#suplementos" className={styles.navSuplementos}>Suplementos</Nav.Link>
-                        <NavDropdown title="Indumentaria" id="collapsible-nav-dropdown" className={styles.navIndumentaria}>
-                            <NavDropdown.Item href="#action/3.1">Femenina</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.2">
-                                Masculina
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
