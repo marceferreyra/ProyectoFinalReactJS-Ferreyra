@@ -24,32 +24,31 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to="/" className={styles.navHome}>Home</Nav.Link>
-                        <NavDropdown title="Productos" id="collapsible-nav-dropdown" className={styles.navProductos}>
-                            <NavDropdown.Item as={NavLink} to="products/bandas-elasticas">
-                                Bandas Elásticas
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item as={NavLink} to="/products/colchonetas">
-                                Colchonetas
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item as={NavLink} to="/products/mancuernas">
-                                Mancuernas
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item as={NavLink} to="/products/tobilleras">
-                                Tobilleras
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item as={NavLink} to="/products/sogas">
-                                Sogas
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item as={NavLink} to="/products/guantes">
-                                Guantes
-                            </NavDropdown.Item>
-                        </NavDropdown>
+
+                        <Nav.Link as={NavLink} to="products/bandas-elasticas" className={styles.navProducts} >
+                            Bandas Elásticas
+                        </Nav.Link>
+
+                        <Nav.Link as={NavLink} to="/products/colchonetas" className={styles.navProducts} >
+                            Colchonetas
+                        </Nav.Link>
+
+                        <Nav.Link as={NavLink} to="/products/mancuernas" className={styles.navProducts} >
+                            Mancuernas
+                        </Nav.Link>
+
+                        <Nav.Link as={NavLink} to="/products/tobilleras" className={styles.navProducts} >
+                            Tobilleras
+                        </Nav.Link>
+
+                        <Nav.Link as={NavLink} to="/products/sogas" className={styles.navProducts} >
+                            Sogas
+                        </Nav.Link>
+
+                        <Nav.Link as={NavLink} to="/products/guantes" className={styles.navProducts} >
+                            Guantes
+                        </Nav.Link>
+
                     </Nav>
                     <Nav>
                         <Nav.Link eventKey={2} href="#memes" className={styles.navCarrito}>
