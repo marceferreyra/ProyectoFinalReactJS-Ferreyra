@@ -368,11 +368,11 @@ const Products = [
         image: Tobillera3kg,
         stock: 10
     },
-
+    
     {
         id: 34,
-        product: "Soga de saltar de cuero con mango de goma",
-        description: "Soga de cuero",
+        product: "Soga de cuero",
+        description: "Soga de saltar de cuero con mango de goma",
         price: 8600,
         category: "sogas",
         image: SogaCuero,
@@ -381,8 +381,8 @@ const Products = [
 
     {
         id: 35,
-        product: "Soga de saltar plástico",
-        description: "Soga de plástico", 
+        product: "Soga de plástico",
+        description: "Soga de saltar plástico",
         price: 3100,
         category: "sogas",
         image: SogaPlastico,
@@ -391,8 +391,8 @@ const Products = [
 
     {
         id: 36,
-        product: "Soga de saltar con peso regulable y mangos de goma",
-        description: "Soga con peso regulable", 
+        product: "Soga con peso regulable",
+        description: "Soga de saltar con peso regulable y mangos de goma",
         price: 6300,
         category: "sogas",
         image: Sogaregulable,
@@ -401,8 +401,8 @@ const Products = [
 
     {
         id: 37,
-        product: "Guantes entrenamiento pesas EVERLAST hombre",
-        description: "Guantes EVERLAST hombre",
+        product: "Guantes EVERLAST hombre",
+        description: "Guantes entrenamiento pesas EVERLAST hombre",
         price: 18000,
         category: "guantes",
         image: GuantesHombre,
@@ -411,8 +411,8 @@ const Products = [
 
     {
         id: 38,
-        product: "Guantes entrenamiento pesas EVERLAST mujer",
-        description: "Guantes EVERLAST mujer",
+        product: "Guantes EVERLAST mujer",
+        description: "Guantes entrenamiento pesas EVERLAST mujer",
         price: 18000,
         category: "guantes",
         image: GuantesMujer,
