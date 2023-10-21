@@ -20,34 +20,33 @@ function NavBar() {
                         height="50"
                     />
                 </Navbar.Brand></NavLink>
-                
+
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <NavLink to="/" className={styles.navHome}><Nav.Link>Home</Nav.Link></NavLink>
-                        
+                        <Nav.Link as={NavLink} to="/" className={styles.navHome}>Home</Nav.Link>
                         <NavDropdown title="Productos" id="collapsible-nav-dropdown" className={styles.navProductos}>
-                            <NavLink ><NavDropdown.Item href="#action/3.1">
+                            <NavDropdown.Item as={NavLink} to="products/bandas-elasticas">
                                 Bandas Elásticas
-                            </NavDropdown.Item></NavLink>
+                            </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.2">
+                            <NavDropdown.Item as={NavLink} to="/products/colchonetas">
                                 Colchonetas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.3">
+                            <NavDropdown.Item as={NavLink} to="/products/mancuernas">
                                 Mancuernas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item as={NavLink} to="/products/tobilleras">
                                 Tobilleras
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.5">
+                            <NavDropdown.Item as={NavLink} to="/products/sogas">
                                 Sogas
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.6">
+                            <NavDropdown.Item as={NavLink} to="/products/guantes">
                                 Guantes
                             </NavDropdown.Item>
                         </NavDropdown>

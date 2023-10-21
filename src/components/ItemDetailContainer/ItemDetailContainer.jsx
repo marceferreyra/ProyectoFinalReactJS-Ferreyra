@@ -6,11 +6,14 @@ import { useParams } from 'react-router-dom';
 const { Meta } = Card;
 
 const ItemDetailContainer = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const [contador, setContador] = useState(1);
+  const decrementarContador = () => {
+    contador > 1 ? setContador(contador - 1) : setContador(1);
+  };
 
- 
-  const selectedProduct = Products.find((product) => product.id === parseInt(id, 10));
+
+  const selectedProduct = Products.find((product) => product.id === parseInt(id));
 
   return (
     <div>
@@ -37,7 +40,7 @@ const ItemDetailContainer = () => {
             width: 400,
           }}
         >
-          <Button onClick={() => setContador(contador - 1)}>-</Button>
+          <Button onClick={decrementarContador}>-</Button>
           <span>{contador}</span>
           <Button onClick={() => setContador(contador + 1)}>+</Button>
           <div>

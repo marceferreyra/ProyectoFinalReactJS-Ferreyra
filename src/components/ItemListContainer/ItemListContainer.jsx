@@ -3,20 +3,32 @@ import styles from './styles.module.css';
 import Products from '../Catalogo/Catalogo.jsx';
 import { Card } from 'antd';
 import Spinner from 'react-bootstrap/Spinner';
-import { Link, useParams } from 'react-router-dom'; 
+import { Link, useParams } from 'react-router-dom';
 const { Meta } = Card;
 
 function ItemListContainer() {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
-    const { categoria } = useParams(); 
+    const { categoria } = useParams();
+    const [categoryTitle, setCategoryTitle] = useState('Productos');
 
     useEffect(() => {
         setTimeout(() => {
             setProducts(Products);
             setLoading(false);
-        }, 500);
-    }, []);
+
+            const categoryTitles = {
+                'bandas-elasticas': 'Bandas Elásticas',
+                'colchonetas': 'Colchonetas',
+                'mancuernas': 'Mancuernas',
+                'tobilleras': 'Tobilleras',
+                'sogas': 'Sogas',
+                'guantes': 'Guantes',
+            };
+
+            setCategoryTitle(categoria ? categoryTitles[categoria] || 'Productos' : 'Productos');
+        }, );
+    }, [categoria]);
 
     const filteredProducts = categoria
         ? Products.filter((product) => product.category === categoria)
@@ -24,7 +36,7 @@ function ItemListContainer() {
 
     return (
         <div>
-            <h1 className={styles.titulo}>Productos</h1>
+            <h1 className={styles.titulo}>{categoryTitle}</h1>
             <hr />
             {loading ? (
                 <div className={styles.spinnerContainer}>
