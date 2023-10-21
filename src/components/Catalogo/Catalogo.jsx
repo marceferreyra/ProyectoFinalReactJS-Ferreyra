@@ -40,306 +40,383 @@ import Tobillera3kg from "../../img/tobilleras-3kg.jpg"
 const Products = [
     {
         id: 1,
-        product: "Banda elásctica larga 1,10 mts",
+        product: "Banda elástica",
+        description: "Banda elásctica larga 1,10 mts",
         price: 5500,
         category: "bandas-elasticas",
-        image: BandaLargaImg
+        image: BandaLargaImg,
+        stock: 10
+
     },
 
     {
         id: 2,
-        product: "Banda elásctica larga reforzada 1,20 mts",
+        product: "Banda elásctica reforzada",
+        description: "Banda elásctica larga reforzada 1,20 mts",
         price: 7350,
         category: "bandas-elasticas",
-        image: BandaLargaReforzadaImg
+        image: BandaLargaReforzadaImg,
+        stock: 10
     },
 
     {
         id: 3,
         product: "Banda con tobillera",
+        description: "Banda con tobillera",
         price: 5200,
         category: "bandas-elasticas",
-        image: BandaTobilleraImg
+        image: BandaTobilleraImg,
+        stock: 10
     },
 
     {
         id: 4,
         product: "Banda en forma de ocho",
+        description: "Banda en forma de ocho",
         price: 4500,
         category: "bandas-elasticas",
-        image: BandaOchoImg
+        image: BandaOchoImg,
+        stock: 10
     },
 
     {
         id: 5,
         product: "Banda redonda",
+        description: "Banda redonda",
         price: 3650,
         category: "bandas-elasticas",
-        image: BandaredondaImg
+        image: BandaredondaImg,
+        stock: 10
     },
 
     {
         id: 6,
-        product: "Set de 5 bandas elásticas, 2 manijas, 2 tobilleras regulables y 1 encastre p/puerta + bolso",
+        product: "Set de bandas elásticas + bolso",
+        description: "Set de 5 bandas elásticas, 2 manijas, 2 tobilleras regulables y 1 encastre p/puerta + bolso",
         price: 18000,
         category: "bandas-elasticas",
-        image: BandaSetImg
+        image: BandaSetImg,
+        stock: 10
     },
 
     {
         id: 7,
         product: "Tiraband de baja intensidad",
+        description: "Tiraband de baja intensidad",
         price: 4200,
         category: "bandas-elasticas",
-        image: TirabandBajaImg
+        image: TirabandBajaImg,
+        stock: 10
     },
 
     {
         id: 8,
         product: "Tiraband de alta intensidad",
+        description: "Tiraband de alta intensidad",
         price: 4900,
         category: "bandas-elasticas",
-        image: TirabandAltaImg
+        image: TirabandAltaImg,
+        stock: 10
     },
 
     {
         id: 9,
-        product: "Colchoneta 1 x 0,50 x 0,04 mts",
+        product: "Colchoneta",
+        description: "Colchoneta 1 x 0,50 x 0,04 mts",
         price: 15300,
         category: "colchonetas",
-        image: Colchoneta
+        image: Colchoneta,
+        stock: 10
     },
 
     {
-        id:10,
-        product: "Colchoneta alta densidad 1 x 0,50 x 0,04 mts",
+        id: 10,
+        product: "Colchoneta alta densidad",
+        description: "Colchoneta alta densidad 1 x 0,50 x 0,04 mts",
         price: 19200,
         category: "colchonetas",
-        image: ColchonetaAltaDensidad
+        image: ColchonetaAltaDensidad,
+        stock: 10
     },
 
     {
         id: 11,
-        product: "Colchoneta plegable 1 x 0,50 x 0,03 mts",
+        product: "Colchoneta plegable",
+        description: "Colchoneta plegable 1 x 0,50 x 0,03 mts",
         price: 13700,
         category: "colchonetas",
-        image: ColchonetaPlegable
+        image: ColchonetaPlegable,
+        stock: 10
     },
 
     {
         id: 12,
-        product: "Mancuernas fundición recubierta en goma 1kg",
+        product: "Mancuernas 1kg",
+        description: "Mancuernas fundición recubierta en goma 1kg",
         price: 4990,
         category: "mancuernas",
-        image: Mancuerna1kg
+        image: Mancuerna1kg,
+        stock: 10
     },
 
     {
         id: 13,
-        product: "Mancuernas fundición recubierta en goma 2kg",
+        product: "Mancuernas 2kg",
+        description: "Mancuernas fundición recubierta en goma 2kg",
         price: 9980,
         category: "mancuernas",
-        image: Mancuerna2kg
+        image: Mancuerna2kg,
+        stock: 10
     },
 
     {
         id: 14,
-        product: "Mancuernas fundición recubierta en goma 3kg",
+        product: "Mancuernas 3kg",
+        description: "Mancuernas fundición recubierta en goma 3kg",
         price: 14970,
         category: "mancuernas",
-        image: Mancuerna3kg
+        image: Mancuerna3kg,
+        stock: 10
     },
 
     {
         id: 15,
-        product: "Mancuernas fundición recubierta en goma 4kg",
+        product: "Mancuernas 4kg",
+        description: "Mancuernas fundición recubierta en goma 4kg",
         price: 19960,
         category: "mancuernas",
-        image: Mancuerna4kg
+        image: Mancuerna4kg,
+        stock: 10
     },
 
     {
         id: 16,
-        product: "Mancuernas fundición recubierta en goma 5kg",
+        product: "Mancuernas 5kg",
+        description: "Mancuernas fundición recubierta en goma 5kg",
         price: 24950,
         category: "mancuernas",
-        image: Mancuerna5kg
+        image: Mancuerna5kg,
+        stock: 10
     },
 
     {
         id: 17,
-        product: "Mancuernas fundición recubierta en goma 6kg",
+        product: "Mancuernas 6kg",
+        description: "Mancuernas fundición recubierta en goma 6kg",
         price: 29940,
         category: "mancuernas",
-        image: Mancuerna6kg
+        image: Mancuerna6kg,
+        stock: 10
     },
 
     {
         id: 18,
-        product: "Mancuernas fundición recubierta en goma 7kg",
+        product: "Mancuernas 7kg",
+        description: "Mancuernas fundición recubierta en goma 7kg",
         price: 34930,
         category: "mancuernas",
-        image: Mancuerna7kg
+        image: Mancuerna7kg,
+        stock: 10
     },
 
     {
         id: 19,
-        product: "Mancuernas fundición recubierta en goma 8kg",
+        product: "Mancuernas 8kg",
+        description: "Mancuernas fundición recubierta en goma 8kg",
         price: 39920,
         category: "mancuernas",
-        image: Mancuerna8kg
+        image: Mancuerna8kg,
+        stock: 10
     },
 
     {
         id: 20,
-        product: "Mancuernas fundición recubierta en goma 9kg",
+        product: "Mancuernas 9kg",
+        description: "Mancuernas fundición recubierta en goma 9kg",
         price: 44910,
         category: "mancuernas",
-        image: Mancuerna9kg
+        image: Mancuerna9kg,
+        stock: 10
     },
 
     {
         id: 21,
-        product: "Mancuernas fundición recubierta en goma 10kg",
+        product: "Mancuernas 10kg",
+        description: "Mancuernas fundición recubierta en goma 10kg",
         price: 49900,
         category: "mancuernas",
-        image: Mancuerna10kg
+        image: Mancuerna10kg,
+        stock: 10
     },
 
     {
         id: 22,
-        product: "Mancuernas hexagonales de caucho 2.5kg",
+        product: "Mancuernas 2.5kg",
+        description: "Mancuernas hexagonales de caucho 2.5kg",
         price: 24500,
         category: "mancuernas",
-        image: Hexagonal2kg
+        image: Hexagonal2kg,
+        stock: 10
     },
 
     {
         id: 23,
-        product: "Mancuernas hexagonales de caucho 7.5kg",
+        product: "Mancuernas 7.5kg",
+        description: "Mancuernas hexagonales de caucho 7.5kg",
         price: 73500,
         category: "mancuernas",
-        image: Hexagonal7kg
+        image: Hexagonal7kg,
+        stock: 10
     },
 
     {
         id: 24,
-        product: "Mancuernas hexagonales de caucho 12.5kg",
+        product: "Mancuernas 12.5kg",
+        description: "Mancuernas hexagonales de caucho 12.5kg",
         price: 122500,
         category: "mancuernas",
-        image: Hexagonal12kg
+        image: Hexagonal12kg,
+        stock: 10
     },
 
     {
         id: 25,
-        product: "Mancuernas hexagonales de caucho 15kg",
+        product: "Mancuernas 15kg",
+        description: "Mancuernas hexagonales de caucho 15kg",
         price: 147000,
         category: "mancuernas",
-        image: Hexagonal15kg
+        image: Hexagonal15kg,
+        stock: 10
     },
 
     {
         id: 26,
-        product: "Mancuernas hexagonales de caucho 22.5kg",
+        product: "Mancuernas 22.5kg",
+        description: "Mancuernas hexagonales de caucho 22.5kg",
         price: 220500,
         category: "mancuernas",
-        image: Hexagonal22kg
+        image: Hexagonal22kg,
+        stock: 10
     },
 
     {
         id: 27,
-        product: "Mancuernas hexagonales de caucho 25kg",
+        product: "Mancuernas 25kg",
+        description: "Mancuernas hexagonales de caucho 25kg",
         price: 245000,
         category: "mancuernas",
-        image: Hexagonal25kg
+        image: Hexagonal25kg,
+        stock: 10
     },
 
     {
         id: 28,
-        product: "Rack horizontal para mancuernas hexagonales de caucho",
+        product: "Rack para mancuernas",
+        description: "Rack horizontal para mancuernas hexagonales de caucho",
         price: 771000,
         category: "mancuernas",
-        image: RackMancuernas
+        image: RackMancuernas,
+        stock: 10
     },
 
     {
         id: 29,
         product: "Tobilleras 0.5kg",
+        description: "Tobilleras 0.5kg",
         price: 3300,
         category: "tobilleras",
-        image: Tobillera0kg
+        image: Tobillera0kg,
+        stock: 10
     },
 
     {
         id: 30,
         product: "Tobilleras 1kg",
+        description: "Tobilleras 1kg",
         price: 3900,
         category: "tobilleras",
-        image: Tobillera1kg
+        image: Tobillera1kg,
+        stock: 10
     },
 
     {
         id: 31,
         product: "Tobilleras 1.5kg",
+        description: "Tobilleras 1.5kg",
         price: 4500,
         category: "tobilleras",
-        image: Tobillera15kg
+        image: Tobillera15kg,
+        stock: 10
     },
 
     {
         id: 32,
         product: "Tobilleras 2kg",
+        description: "Tobilleras 2kg",
         price: 5250,
         category: "tobilleras",
-        image: Tobillera2kg
+        image: Tobillera2kg,
+        stock: 10
     },
 
     {
         id: 33,
         product: "Tobilleras 3kg",
+        description: "Tobilleras 3kg",
         price: 6100,
         category: "tobilleras",
-        image: Tobillera3kg
+        image: Tobillera3kg,
+        stock: 10
     },
 
     {
         id: 34,
         product: "Soga de saltar de cuero con mango de goma",
+        description: "Soga de cuero",
         price: 8600,
         category: "sogas",
-        image: SogaCuero
+        image: SogaCuero,
+        stock: 10
     },
 
     {
         id: 35,
         product: "Soga de saltar plástico",
+        description: "Soga de plástico", 
         price: 3100,
         category: "sogas",
-        image: SogaPlastico
+        image: SogaPlastico,
+        stock: 10
     },
 
     {
         id: 36,
         product: "Soga de saltar con peso regulable y mangos de goma",
+        description: "Soga con peso regulable", 
         price: 6300,
         category: "sogas",
-        image: Sogaregulable
+        image: Sogaregulable,
+        stock: 10
     },
 
     {
         id: 37,
         product: "Guantes entrenamiento pesas EVERLAST hombre",
+        description: "Guantes EVERLAST hombre",
         price: 18000,
         category: "guantes",
-        image: GuantesHombre
+        image: GuantesHombre,
+        stock: 10
     },
 
     {
         id: 38,
         product: "Guantes entrenamiento pesas EVERLAST mujer",
+        description: "Guantes EVERLAST mujer",
         price: 18000,
         category: "guantes",
-        image: GuantesMujer
+        image: GuantesMujer,
+        stock: 10
     },
 ]
 
