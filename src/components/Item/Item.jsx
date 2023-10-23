@@ -12,11 +12,9 @@ const Item = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      setProducts(Products);
-      setLoading(false);
-    }, 500);
-  }, []);
+    setProducts(Products);
+  },);
+  [];
 
   const filteredProducts = id
     ? Products.filter(product => product.id === id)
@@ -26,30 +24,24 @@ const Item = () => {
     <div>
       <h1 className={styles.titulo}>Productos</h1>
       <hr />
-      {loading ? (
-        <div className={styles.spinnerContainer}>
-          <Spinner animation="border" variant="dark" role="status">
-          </Spinner>
-          <span className={styles.loading}>Cargando...</span>
-        </div>
-      ) : (
-        <div style={{ display: 'flex', flexWrap: 'wrap' }} className={styles.card}>
-          {filteredProducts.map(product => (
-            <Card
-              key={product.id}
-              hoverable
-              style={{
-                width: 300,
-                margin: '10px',
-              }}
-              cover={<img alt={product.product} src={product.image} className={styles.cardImg} />}
-            >
-              <Meta title={product.product} description={`Precio: $${product.price}`} />
-              <Button>Ver detalle</Button>
-            </Card>
-          ))}
-        </div>
-      )}
+
+      <div style={{ display: 'flex', flexWrap: 'wrap' }} className={styles.card}>
+        {filteredProducts.map(product => (
+          <Card
+            key={product.id}
+            hoverable
+            style={{
+              width: 300,
+              margin: '10px',
+            }}
+            cover={<img alt={product.product} src={product.image} className={styles.cardImg} />}
+          >
+            <Meta title={product.product} description={`Precio: $${product.price}`} />
+            <Button>Ver detalle</Button>
+          </Card>
+        ))}
+      </div>
+
     </div>
   );
 }

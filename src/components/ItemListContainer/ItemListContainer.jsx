@@ -27,7 +27,7 @@ function ItemListContainer() {
             };
 
             setCategoryTitle(id ? categoryTitles[id] || 'Productos' : 'Productos');
-        }, );
+        }, 500);
     }, [id]);
 
     const filteredProducts = id
