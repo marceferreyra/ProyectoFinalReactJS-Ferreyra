@@ -9,7 +9,7 @@ const { Meta } = Card;
 function ItemListContainer() {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
-    const { categoria } = useParams();
+    const { id } = useParams();
     const [categoryTitle, setCategoryTitle] = useState('Productos');
 
     useEffect(() => {
@@ -26,12 +26,12 @@ function ItemListContainer() {
                 'guantes': 'Guantes',
             };
 
-            setCategoryTitle(categoria ? categoryTitles[categoria] || 'Productos' : 'Productos');
+            setCategoryTitle(id ? categoryTitles[id] || 'Productos' : 'Productos');
         }, );
-    }, [categoria]);
+    }, [id]);
 
-    const filteredProducts = categoria
-        ? Products.filter((product) => product.category === categoria)
+    const filteredProducts = id
+        ? Products.filter((product) => product.category === id)
         : Products;
 
     return (
