@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styles from "./styles.module.css";
 import Products from "../Catalogo/Catalogo.jsx";
 import { Button, Card } from 'antd';
-import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
 const { Meta } = Card;
 
 const Item = () => {
-  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState(8);
   const { id } = useParams();
 
