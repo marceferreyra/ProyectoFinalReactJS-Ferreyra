@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles.module.css';
 import Products from '../Catalogo/Catalogo.jsx';
-import { Card } from 'antd';
-import Spinner from 'react-bootstrap/Spinner';
-import { Link, useParams } from 'react-router-dom';
-const { Meta } = Card;
+import Item from '../Item/Item';
+import { useParams } from 'react-router-dom';
 
 function ItemListContainer() {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const { id } = useParams();
     const [categoryTitle, setCategoryTitle] = useState('Productos');
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
         setTimeout(() => {
@@ -27,43 +25,19 @@ function ItemListContainer() {
             };
 
             setCategoryTitle(id ? categoryTitles[id] || 'Productos' : 'Productos');
+
+            const filtered = id
+                ? Products.filter((product) => product.category === id)
+                : Products;
+            setFilteredProducts(filtered);
         }, 500);
     }, [id]);
 
-    const filteredProducts = id
-        ? Products.filter((product) => product.category === id)
-        : Products;
-
     return (
-        <div>
-            <h1 className={styles.titulo}>{categoryTitle}</h1>
-            <hr />
-            {loading ? (
-                <div className={styles.spinnerContainer}>
-                    <Spinner animation="border" variant="dark" role="status">
-                    </Spinner>
-                    <span className={styles.loading}>Cargando...</span>
-                </div>
-            ) : (
-                <div style={{ display: 'flex', flexWrap: 'wrap' }} className={styles.card}>
-                    {filteredProducts.map((product) => (
-                        <Link to={`/item/${product.id}`} key={product.id} className={styles.link}>
-                            <Card
-                                hoverable
-                                style={{
-                                    width: 300,
-                                    margin: '10px',
-                                }}
-                                cover={<img alt={product.product} src={product.image} className={styles.cardImg} />}
-                            >
-                                <Meta title={product.product} description={`Precio: $${product.price}`} />
-                            </Card>
-                        </Link>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
+        <Item categoryTitle={categoryTitle} loading={loading} filteredProducts={filteredProducts} />
+    )
 }
 
 export default ItemListContainer;
+
+

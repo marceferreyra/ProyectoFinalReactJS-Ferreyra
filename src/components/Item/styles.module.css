@@ -1,28 +1,33 @@
 .cardImg  {
         height: 300px;
-}
-
-.titulo {
+    }
+    
+    .titulo {
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-weight: 100;
         padding-top: 20px;
         padding-bottom: 20px;
         color: rgb(52, 49, 49);
         text-align: center;
-}
-
-.card {
+    }
+    
+    .card {
         justify-content: space-evenly;
-}
-
-.spinnerContainer {
+        
+    }
+    
+    .spinnerContainer {
         display: flex;
         justify-content: center;
         margin-top: 100px;
         
-}
-
-.loading {
+    }
+    
+    .loading {
         font-weight:700;
         padding-left: 15px;
-}
+    }
+    
+    .link {
+        text-decoration: none;
+    }
