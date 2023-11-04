@@ -29,7 +29,7 @@ const Item = ({ categoryTitle, loading, filteredProducts }) => {
                   }}
                   cover={<img alt={product.product} src={product.image} className={styles.cardImg} />}
                 >
-                  <Meta title={product.product} description={`Precio: $${product.price}`} />
+                  <Meta title={product.title} description={`Precio: $${product.price}`} />
                 </Card>
               </Link>
             ))

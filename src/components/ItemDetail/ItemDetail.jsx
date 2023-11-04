@@ -18,7 +18,7 @@ const ItemDetail = ({ selectedProduct, contador, decreaseContador, increaseConta
             }}
             cover={<img alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />}
           >
-            <Meta title={selectedProduct.product} description={`Precio: $${selectedProduct.price}`} />
+            <Meta title={selectedProduct.title} description={`Precio: $${selectedProduct.price}`} />
           </Card>
         ) : (
           <p>Producto no encontrado</p>
