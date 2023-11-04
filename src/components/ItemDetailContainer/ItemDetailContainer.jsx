@@ -6,21 +6,20 @@ import { collection, getDocs } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  console.log("ID del producto:", id);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [contador, setContador] = useState(1);
+  const [counter, setCounter] = useState(1);
 
-  const decreaseContador = () => {
-    contador > 1 ? setContador(contador - 1) : setContador(1);
+  const decreaseCounter = () => {
+    counter > 1 ? setCounter(counter - 1) : setCounter(1);
   };
 
-  const increaseContador = () => {
-    contador < (selectedProduct ? selectedProduct.stock : 0) ? setContador(contador + 1) : null;
+  const increaseCounter = () => {
+    counter < (selectedProduct ? selectedProduct.stock : 0) ? setCounter(counter + 1) : null;
   };
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getData = async () => {
       const productsRef = collection(db, 'products');
       const dataFiltered = await getDocs(productsRef);
       const data = dataFiltered.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -36,7 +35,7 @@ const ItemDetailContainer = () => {
       setLoading(false);
     };
 
-    fetchData();
+    getData();
   }, [id]);
 
   if (loading) {
@@ -50,9 +49,9 @@ const ItemDetailContainer = () => {
   return (
     <ItemDetail
       selectedProduct={selectedProduct}
-      contador={contador}
-      decreaseContador={decreaseContador}
-      increaseContador={increaseContador}
+      counter={counter}
+      decreaseCounter={decreaseCounter}
+      increaseCounter={increaseCounter}
     />
   );
 };

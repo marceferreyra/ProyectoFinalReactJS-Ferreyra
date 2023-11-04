@@ -1,11 +1,19 @@
 import React from 'react';
 import { Card, Button } from 'antd';
 import styles from './styles.module.css';
-const { Meta } = Card;
+import { useCart } from '../CartContext/CartContext.jsx'
 
 
-const ItemDetail = ({ selectedProduct, contador, decreaseContador, increaseContador }) => {
-  return (
+const ItemDetail = ({ selectedProduct, counter, decreaseCounter, increaseCounter }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    if (counter > 0) {
+      addToCart({ ...selectedProduct, quantity: counter });
+    }
+  };
+
+  return (  
     <div>
       <h1 className={styles.titulo}></h1>
       <hr />
@@ -17,29 +25,30 @@ const ItemDetail = ({ selectedProduct, contador, decreaseContador, increaseConta
               width: 400,
             }}
             cover={<img alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />}
-          >
-            <Meta title={selectedProduct.title} description={`Precio: $${selectedProduct.price}`} />
-          </Card>
+          />
         ) : (
           <p>Producto no encontrado</p>
         )}
         <Card
-          title={<span style={{ whiteSpace: 'wrap' }}>{selectedProduct.description}</span>}
+          title={<div>
+            <span style={{ whiteSpace: 'wrap' }}>{selectedProduct.description}</span>
+          </div>}
           bordered={false}
           style={{
             width: 400,
           }}
         >
           <div>
-            <Button onClick={decreaseContador} className={styles.decrease}>-</Button>
-            <span>{contador}</span>
-            <Button onClick={increaseContador} className={styles.increase}>+</Button>
+            <span style={{ whiteSpace: 'wrap' }}>{`Precio: ${selectedProduct.price}`}</span>
+            <Button onClick={decreaseCounter} className={styles.decrease}>-</Button>
+            <span>{counter}</span>
+            <Button onClick={increaseCounter} className={styles.increase}>+</Button>
           </div>
 
           <p>Stock disponible: {selectedProduct.stock}</p>
 
           <div>
-            <Button>Comprar</Button>
+            <Button onClick={handleAddToCart}>Agregar al carrito</Button>
           </div>
         </Card>
       </div>

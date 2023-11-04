@@ -50,7 +50,7 @@ function NavBar() {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link eventKey={2} href="#memes" className={styles.navCarrito}>
+                        <Nav.Link as={NavLink} to="/cart" eventKey={2} href="#memes" className={styles.navCarrito}>
                             <CartWidget />
                         </Nav.Link>
                     </Nav>
