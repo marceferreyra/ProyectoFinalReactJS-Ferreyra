@@ -9,6 +9,7 @@ const ItemDetail = ({ selectedProduct, counter, decreaseCounter, increaseCounter
 
   const handleAddToCart = () => {
     if (counter > 0) {
+     
       addToCart({ ...selectedProduct, quantity: counter });
     }
   };
