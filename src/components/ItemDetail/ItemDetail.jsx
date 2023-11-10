@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'antd';
 import styles from './styles.module.css';
-import { useCart } from '../CartContext/CartContext.jsx'
+import { useCart } from '../cartContext/cartContext.jsx'
 
 
 const ItemDetail = ({ selectedProduct, counter, decreaseCounter, increaseCounter }) => {

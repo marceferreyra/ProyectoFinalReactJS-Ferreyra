@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { useCart } from '../CartContext/CartContext.jsx'
+import { useCart } from '../cartContext/cartContext.jsx'
 
 export const CartWidget = () => {
   const { cart } = useCart();

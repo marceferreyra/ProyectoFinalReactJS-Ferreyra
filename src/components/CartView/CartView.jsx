@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useCart } from '../CartContext/CartContext.jsx';
+import { useCart } from '../cartContext/cartContext.jsx';
 import styles from './styles.module.css';
 import { Button } from 'antd';
 import { Trash3 } from 'react-bootstrap-icons';
