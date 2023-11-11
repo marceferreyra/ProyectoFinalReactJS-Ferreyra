@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../cartContext/cartContext.jsx';
-import styles from './styles.module.css';
+import CartItem from '../cartItem/cartItem.jsx';
 import { Button } from 'antd';
-import { Trash3 } from 'react-bootstrap-icons';
+import styles from './styles.module.css'
 
 const CartView = () => {
   const { cart, addToCart, removeFromCart, removeAllFromCart } = useCart();
@@ -23,24 +23,13 @@ const CartView = () => {
       {cart.length > 0 ? (
         <div>
           {cart.map((product) => (
-            <div className={styles.cart} key={product.id}>
-              <div className={styles.image}>
-                <img src={product.image} alt={product.title} />
-              </div>
-              <div className={styles.title}>{product.title}</div>
-              <div className={styles.quantity}>
-                <span>
-                  <Button onClick={() => removeFromCart(product, true)}>-</Button>
-                  {product.quantity || 1}
-                  <Button onClick={() => addToCart({ ...product, quantity: 1 })}>+</Button>
-                </span>
-              </div>
-              <div className={styles.price}>${product.price}</div>
-              <div className={styles.subtotal}>Subtotal: ${product.price * (product.quantity || 1)}</div>
-              <button className={styles.trash} onClick={() => handleRemoveFromCart(product)}>
-                <Trash3 />
-              </button>
-            </div>
+            <CartItem
+              key={product.id}
+              product={product}
+              removeFromCart={removeFromCart}
+              addToCart={addToCart}
+              handleRemoveFromCart={handleRemoveFromCart}
+            />
           ))}
           <div>
             <Button className={styles.buy}>Finalizar Compra</Button>
