@@ -40,7 +40,6 @@ const ItemList = () => {
         const filtered = id ? data.filter((product) => product.categoryId === id) : data;
         setFilteredProducts(filtered);
       } else {
-        console.error('Error al obtener los productos.');
         setLoading(false);
       }
     };

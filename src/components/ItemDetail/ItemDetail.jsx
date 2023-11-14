@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button } from 'antd';
+import { Card, Button, Image } from 'antd';
 import styles from './styles.module.css';
 import ItemCount from '../itemCount/itemCount.jsx';
 import { useCart } from '../cartContext/cartContext.jsx';
@@ -22,8 +22,6 @@ const ItemDetail = ({ id }) => {
 
       if (product) {
         setSelectedProduct(product);
-      } else {
-        console.error('Producto no encontrado');
       }
 
       setLoading(false);
@@ -33,7 +31,7 @@ const ItemDetail = ({ id }) => {
   }, [id]);
 
   if (loading) {
-    return <p>Cargando...</p>;
+    return <p className= {styles.loading}>Cargando...</p>;
   }
 
   const handleAddToCart = () => {
@@ -48,13 +46,10 @@ const ItemDetail = ({ id }) => {
       <hr />
       <div className={styles.cardDetail}>
         {selectedProduct ? (
-          <Card
-            hoverable
-            style={{
-              width: 400,
-            }}
-            cover={<img alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />}
-          />
+         
+         
+            <Image className={styles.img} alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />
+          
         ) : (
           <p>Producto no encontrado</p>
         )}
@@ -78,10 +73,10 @@ const ItemDetail = ({ id }) => {
             />
           </div>
 
-          <p>Stock disponible: {selectedProduct.stock}</p>
+          <span>Stock disponible: {selectedProduct.stock}</span>
 
           <div>
-            <Button className= {styles.buy} onClick={handleAddToCart}>Agregar al carrito</Button>
+            <Button className={styles.buy} onClick={handleAddToCart}>Agregar al carrito</Button>
           </div>
         </Card>
       </div>

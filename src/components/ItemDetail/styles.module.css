@@ -16,7 +16,15 @@
 
 .buy {
     margin-top: 50px;
-    margin-left: 50px;
     background-color: #000c43c9;
     font-weight: bold;
+}
+
+.img {
+    border-radius: 3%;
+}
+
+.loading {
+    margin-top: 75px;
+    text-align: center;
 }

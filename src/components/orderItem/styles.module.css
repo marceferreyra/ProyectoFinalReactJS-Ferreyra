@@ -14,54 +14,77 @@
 }
 
 .image {
-    width: 50px;
+    width: 10%;
     text-align: center;
 
 }
 
 .title {
-    width: 150px;    
+    width: 30%;
     text-align: center;
 
 }
 
 .quantity {
-    width: 100px;  
+    width: 20%;
     text-align: center;
 
 }
 
 .price {
-    width: 80px;
+    width: 20%;
     text-align: center;
 
 }
 
 .subtotal {
-    width: 60px;
+    width: 20%;
     text-align: center;
 
 }
 
 .buy {
     margin-top: 50px;
-    margin-left: 50px;
     background-color: #000c43c9;
     font-weight: bold;
 }
 
-.clearCart {
-    background-color: #c9000c;
-    font-weight: bold;
-}
 
-.order {
+.container {
     display: flex;
-}
+    justify-content: space-between;
+  }
+  
+  .orderContainer {
+    flex: 1; 
+    margin-right: 10px; 
+    width: 45%;
+  }
+  
+  .formContainer {
+    width: 45%
+  }
+  
+  .total {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 30px;
+  }
 
-.orderItem {
+  h2 {
+    text-align: center;
+  }
+
+  .orderPlaced {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+    justify-content: center;
+    
+  }
+
+  .titulo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(52, 49, 49);
+    text-align: center;
 }

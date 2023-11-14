@@ -20,7 +20,7 @@ const CartView = () => {
 
   return (
     <div>
-      <h2>Carrito de Compras</h2>
+      <h2 className={styles.titulo}>Carrito de Compras</h2>
       {cart.length > 0 ? (
         <div>
           {cart.map((product) => (
@@ -34,13 +34,19 @@ const CartView = () => {
           ))}
           <div>
             <Link to="/order">
-              <Button className={styles.buy}>Ir a finalizr compra</Button>
+              <Button className={styles.buy}>Ir a finalizar compra</Button>
             </Link>
             <Button className={styles.clearCart} onClick={() => removeAllFromCart()}>Vaciar carrito</Button>
           </div>
         </div>
       ) : (
-        <p>El carrito está vacío.</p>
+        <div className={styles.emptyCart}>
+          <p className={styles.p}>El carrito está vacío.</p>
+          <Link to="/">
+            <span><Button className={styles.buy}>Ver productos</Button></span>
+          </Link>
+        </div>
+
       )}
     </div>
   );
