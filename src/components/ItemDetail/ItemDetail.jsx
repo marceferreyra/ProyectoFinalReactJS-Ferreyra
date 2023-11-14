@@ -81,7 +81,7 @@ const ItemDetail = ({ id }) => {
           <p>Stock disponible: {selectedProduct.stock}</p>
 
           <div>
-            <Button onClick={handleAddToCart}>Agregar al carrito</Button>
+            <Button className= {styles.buy} onClick={handleAddToCart}>Agregar al carrito</Button>
           </div>
         </Card>
       </div>

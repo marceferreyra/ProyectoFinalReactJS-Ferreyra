@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../cartContext/cartContext.jsx';
 import CartItem from '../cartItem/cartItem.jsx';
 import { Button } from 'antd';
@@ -32,7 +33,9 @@ const CartView = () => {
             />
           ))}
           <div>
-            <Button className={styles.buy}>Finalizar Compra</Button>
+            <Link to="/order">
+              <Button className={styles.buy}>Ir a finalizr compra</Button>
+            </Link>
             <Button className={styles.clearCart} onClick={() => removeAllFromCart()}>Vaciar carrito</Button>
           </div>
         </div>

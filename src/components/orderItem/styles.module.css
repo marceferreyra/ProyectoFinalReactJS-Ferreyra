@@ -1,0 +1,67 @@
+.cart {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    width: 90%;
+    height: 55px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.image img {
+    height: 50px;
+    width: 50px;
+}
+
+.image {
+    width: 50px;
+    text-align: center;
+
+}
+
+.title {
+    width: 150px;    
+    text-align: center;
+
+}
+
+.quantity {
+    width: 100px;  
+    text-align: center;
+
+}
+
+.price {
+    width: 80px;
+    text-align: center;
+
+}
+
+.subtotal {
+    width: 60px;
+    text-align: center;
+
+}
+
+.buy {
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: #000c43c9;
+    font-weight: bold;
+}
+
+.clearCart {
+    background-color: #c9000c;
+    font-weight: bold;
+}
+
+.order {
+    display: flex;
+}
+
+.orderItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
