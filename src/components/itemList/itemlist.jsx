@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Item from '../item/item.jsx';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../../firebase/client.js';
 
 const ItemList = () => {
@@ -13,8 +13,19 @@ const ItemList = () => {
 
   const getProducts = async () => {
     const productsRef = collection(db, 'products');
-    const dataFiltered = await getDocs(productsRef);
-    const data = dataFiltered.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    
+    let queryRef = productsRef;
+
+   
+    if (id) {
+      queryRef = query(queryRef, where('categoryId', '==', id));
+    }
+ 
+    queryRef = query(queryRef, orderBy('categoryId'));
+
+    const querySnapshot = await getDocs(queryRef);
+    const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
     return data;
   };
 
