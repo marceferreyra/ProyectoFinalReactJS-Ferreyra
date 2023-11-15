@@ -1,91 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Button, Image } from 'antd';
-import styles from './styles.module.css';
-import ItemCount from '../itemCount/itemCount.jsx';
-import { useCart } from '../cartContext/cartContext.jsx';
-import { doc, getDoc } from 'firebase/firestore';
+import React, { useState, useEffect } from 'react';
+import Item from '../item/item.jsx';
+import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../../firebase/client.js';
 
-const ItemDetail = ({ id }) => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+const ItemList = () => {
   const [loading, setLoading] = useState(true);
-  const [counter, setCounter] = useState(1);
-
-  const { addToCart } = useCart();
+  const [products, setProducts] = useState([]);
+  const { id } = useParams();
+  const [categoryTitle, setCategoryTitle] = useState('Productos');
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const productRef = doc(db, 'products', id);
-        const snapshot = await getDoc(productRef);
+        const productsRef = collection(db, 'products');
+        let queryRef = productsRef;
 
-        if (snapshot.exists()) {
-          setSelectedProduct({
-            id: snapshot.id,
-            ...snapshot.data()
-          });
+        if (id) {
+          queryRef = query(queryRef, where('categoryId', '==', id));
         }
-      } catch (error) {
-      }
 
-      setLoading(false);
+        queryRef = query(queryRef, orderBy('categoryId'));
+
+        const querySnapshot = await getDocs(queryRef);
+        const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+        setProducts(data);
+        setLoading(false);
+
+        const categoryTitles = {
+          'bandas-elasticas': 'Bandas Elásticas',
+          'colchonetas': 'Colchonetas',
+          'mancuernas': 'Mancuernas',
+          'tobilleras': 'Tobilleras',
+          'sogas': 'Sogas',
+          'guantes': 'Guantes',
+        };
+
+        setCategoryTitle(id ? categoryTitles[id] || 'Productos' : 'Productos');
+
+        const filtered = id ? data.filter((product) => product.categoryId === id) : data;
+        setFilteredProducts(filtered);
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     getData();
   }, [id]);
 
-  if (loading) {
-    return <p className={styles.loading}>Cargando...</p>;
-  }
-
-  const handleAddToCart = () => {
-    if (counter > 0) {
-      addToCart({ ...selectedProduct, quantity: counter });
-    }
-  };
-
   return (
-    <div>
-      <h1 className={styles.titulo}></h1>
-      <hr />
-      <div className={styles.cardDetail}>
-        {selectedProduct ? (
-
-
-          <Image className={styles.img} alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />
-
-        ) : (
-          <p>Producto no encontrado</p>
-        )}
-        <Card
-          title={
-            <div>
-              <span style={{ whiteSpace: 'wrap' }}>{selectedProduct.description}</span>
-            </div>
-          }
-          bordered={false}
-          style={{
-            width: 400,
-          }}
-        >
-          <div>
-            <span style={{ whiteSpace: 'wrap' }}>{`Precio: ${selectedProduct.price}`}</span>
-            <ItemCount
-              counter={counter}
-              setCounter={setCounter}
-              selectedProduct={selectedProduct}
-            />
-          </div>
-
-          <span>Stock disponible: {selectedProduct.stock}</span>
-
-          <div>
-            <Button className={styles.buy} onClick={handleAddToCart}>Agregar al carrito</Button>
-          </div>
-        </Card>
-      </div>
-    </div>
+    <Item categoryTitle={categoryTitle} loading={loading} filteredProducts={filteredProducts} />
   );
 };
 
-export default ItemDetail;
+export default ItemList;
