@@ -3,7 +3,7 @@ import { Card, Button, Image } from 'antd';
 import styles from './styles.module.css';
 import ItemCount from '../itemCount/itemCount.jsx';
 import { useCart } from '../cartContext/cartContext.jsx';
-import { collection, getDocs } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase/client.js';
 
 const ItemDetail = ({ id }) => {
@@ -15,13 +15,17 @@ const ItemDetail = ({ id }) => {
 
   useEffect(() => {
     const getData = async () => {
-      const productsRef = collection(db, 'products');
-      const dataFiltered = await getDocs(productsRef);
-      const data = dataFiltered.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      const product = data.find((product) => product.id === id);
+      try {
+        const productRef = doc(db, 'products', id);
+        const snapshot = await getDoc(productRef);
 
-      if (product) {
-        setSelectedProduct(product);
+        if (snapshot.exists()) {
+          setSelectedProduct({
+            id: snapshot.id,
+            ...snapshot.data()
+          });
+        }
+      } catch (error) {
       }
 
       setLoading(false);
@@ -31,7 +35,7 @@ const ItemDetail = ({ id }) => {
   }, [id]);
 
   if (loading) {
-    return <p className= {styles.loading}>Cargando...</p>;
+    return <p className={styles.loading}>Cargando...</p>;
   }
 
   const handleAddToCart = () => {
@@ -46,10 +50,10 @@ const ItemDetail = ({ id }) => {
       <hr />
       <div className={styles.cardDetail}>
         {selectedProduct ? (
-         
-         
-            <Image className={styles.img} alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />
-          
+
+
+          <Image className={styles.img} alt={selectedProduct.product} src={selectedProduct.image} style={{ height: 400 }} />
+
         ) : (
           <p>Producto no encontrado</p>
         )}
