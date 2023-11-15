@@ -31,6 +31,7 @@ const OrderItem = () => {
                     title: product.title,
                     quantity: product.quantity || 1,
                     price: product.price,
+                    category: product.categoryId
                 })),
                 total: calculateTotal(),
             };
