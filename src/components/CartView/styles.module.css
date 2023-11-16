@@ -50,9 +50,9 @@
 }
 
 .buy {
-    margin-top: 50px;
     background-color: #000c43c9;
     font-weight: bold;
+    margin-right: 10px;
 
 }
 
@@ -69,7 +69,7 @@
 }
 
 .p {
-   
+
     margin-top: 50px;
 }
 
@@ -84,4 +84,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 247px;
+    margin-top: 30px;
+}
+
+.cartButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 150px;
 }

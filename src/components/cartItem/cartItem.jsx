@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
 import { Trash3 } from 'react-bootstrap-icons';
 import styles from './styles.module.css';
 
-const CartItem = ({ product, removeFromCart, addToCart, handleRemoveFromCart }) => {
+const CartItem = ({ product, removeFromCart, addToCart, handleRemoveFromCart,  }) => {
   return (
+    <Card>
     <div className={styles.cart} key={product.id}>
       <div className={styles.image}>
         <img src={product.image} alt={product.title} />
@@ -12,9 +13,9 @@ const CartItem = ({ product, removeFromCart, addToCart, handleRemoveFromCart }) 
       <div className={styles.title}>{product.title}</div>
       <div className={styles.quantity}>
         <span>
-          <Button onClick={() => removeFromCart(product, true)}>-</Button>
+          <Button className={styles.remove} onClick={() => removeFromCart(product, true)}>-</Button>
           {product.quantity || 1}
-          <Button onClick={() => addToCart({ ...product, quantity: 1 })}>+</Button>
+          <Button className={styles.add} onClick={() => addToCart({ ...product, quantity: 1 })}>+</Button>
         </span>
       </div>
       <div className={styles.price}>${product.price}</div>
@@ -23,7 +24,8 @@ const CartItem = ({ product, removeFromCart, addToCart, handleRemoveFromCart }) 
         <Trash3 />
       </button>
     </div>
-  );
+  </Card>
+);
 };
 
 export default CartItem;

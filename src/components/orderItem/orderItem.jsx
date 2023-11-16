@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { useCart } from '../cartContext/cartContext.jsx';
 import styles from './styles.module.css';
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { Form, Input, Button, Card } from 'antd';
-import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
-const OrderItem = ({ orderPlaced, sendOrder, removeAllFromCart, cart, form, calculateTotal }) => {
+const OrderItem = ({ orderPlaced, sendOrder, cart, form, calculateTotal }) => {
 
     return (
         <div>
@@ -40,10 +37,11 @@ const OrderItem = ({ orderPlaced, sendOrder, removeAllFromCart, cart, form, calc
                                 </div>
                             ))}
 
-                            <div className={styles.total}>
-                                <strong>Total: ${calculateTotal()}</strong>
-                            </div>
-
+                            {cart.length > 0 && (
+                                <div className={styles.total}>
+                                    <strong>Total: ${calculateTotal()}</strong>
+                                </div>
+                            )}
                         </div>
 
                         <div className={styles.formContainer}>

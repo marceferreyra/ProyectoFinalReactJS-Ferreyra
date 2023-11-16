@@ -50,6 +50,8 @@ const Order = () => {
                 title: '¡Compra realizada!',
                 text: `Tu orden ha sido procesada con éxito. ID de orden: ${docRef.id}`,
                 icon: 'success',
+                confirmButtonColor: '#000c43c9',
+                color: "black"
             });
         } catch (error) {
 

@@ -21,30 +21,24 @@
 
 .title {
     width: 30%;
-    border-left: solid black 1px;
     text-align: center;
 
 }
 
 .quantity {
     width: 20%;
-    border-left: solid black 1px;
     text-align: center;
 
 }
 
 .price {
     width: 20%;
-    border-left: solid black 1px;
-
     text-align: center;
 
 }
 
 .subtotal {
     width: 20%;
-    border-left: solid black 1px;
-    border-right: solid black 1px;
     text-align: center;
 
 }
@@ -66,4 +60,12 @@
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.remove {
+    margin-right: 10px;
+}
+
+.add {
+    margin-left: 10px;
 }

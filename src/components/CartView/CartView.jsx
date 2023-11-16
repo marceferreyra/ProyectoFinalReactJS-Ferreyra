@@ -7,11 +7,15 @@ import styles from './styles.module.css'
 
 const CartView = () => {
   const { cart, addToCart, removeFromCart, removeAllFromCart } = useCart();
+  const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
     const newTotalQuantity = cart.reduce((total, product) => total + (product.quantity || 1), 0);
     setTotalQuantity(newTotalQuantity);
+
+    const newTotalPrice = cart.reduce((total, product) => total + (product.price * (product.quantity || 1)), 0);
+    setTotalPrice(newTotalPrice);
   }, [cart]);
 
   const handleRemoveFromCart = (product) => {
@@ -33,10 +37,15 @@ const CartView = () => {
             />
           ))}
           <div>
-            <Link to="/order">
-              <Button className={styles.buy}>Ir a finalizar compra</Button>
-            </Link>
-            <Button className={styles.clearCart} onClick={() => removeAllFromCart()}>Vaciar carrito</Button>
+            <div className={styles.total}>
+              <p>Total: ${totalPrice}</p>
+            </div>
+            <div  className={styles.cartButton}> 
+              <Link to="/order">
+                <Button className={styles.buy}>Ir a finalizar compra</Button>
+              </Link>
+              <Button className={styles.clearCart} onClick={() => removeAllFromCart()}>Vaciar carrito</Button>
+            </div>
           </div>
         </div>
       ) : (
@@ -46,7 +55,6 @@ const CartView = () => {
             <span><Button className={styles.buy}>Ver productos</Button></span>
           </Link>
         </div>
-
       )}
     </div>
   );
