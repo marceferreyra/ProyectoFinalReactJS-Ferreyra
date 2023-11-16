@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../cartContext/cartContext.jsx';
-import styles from './styles.module.css';
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
-import { Form, Input, Button, Card } from 'antd';
+import { Form } from 'antd';
 import Swal from 'sweetalert2';
 import OrderItem from '../orderItem/orderItem.jsx';
 

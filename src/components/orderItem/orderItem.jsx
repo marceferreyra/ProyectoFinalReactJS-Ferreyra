@@ -24,13 +24,13 @@ const OrderItem = ({ orderPlaced, sendOrder, cart, form, calculateTotal }) => {
                                             <div className={styles.image}>
                                                 <img src={product.image} alt={product.title} />
                                             </div>
-                                            <div className={styles.title}>{product.title}</div>
+                                            <div className={styles.title}><p>Producto:</p>{product.title}</div>
                                             <div className={styles.quantity}>
-                                                <span>{product.quantity || 1}</span>
+                                                <p>Cantidad:</p> {product.quantity || 1}
                                             </div>
-                                            <div className={styles.price}>${product.price}</div>
+                                            <div className={styles.price}> <p>Precio:</p> ${product.price}</div>
                                             <div className={styles.subtotal}>
-                                                Subtotal: ${product.price * (product.quantity || 1)}
+                                             <p>Subtotal:</p> ${product.price * (product.quantity || 1)}
                                             </div>
                                         </div>
                                     </Card>
@@ -39,7 +39,7 @@ const OrderItem = ({ orderPlaced, sendOrder, cart, form, calculateTotal }) => {
 
                             {cart.length > 0 && (
                                 <div className={styles.total}>
-                                    <strong>Total: ${calculateTotal()}</strong>
+                                    <p>Total: ${calculateTotal()}</p>
                                 </div>
                             )}
                         </div>

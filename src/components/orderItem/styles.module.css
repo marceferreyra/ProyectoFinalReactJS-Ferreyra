@@ -68,7 +68,7 @@
   .total {
     display: flex;
     justify-content: flex-end;
-    padding-right: 50px;
+    margin-right: 85px;
     margin-top: 30px;
   }
 
