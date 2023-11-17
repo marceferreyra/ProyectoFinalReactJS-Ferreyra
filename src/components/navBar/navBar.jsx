@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-function NavBar() {
+const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" className={styles.navBar}>
             <Container>
