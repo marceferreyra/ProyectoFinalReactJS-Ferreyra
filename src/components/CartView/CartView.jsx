@@ -20,8 +20,32 @@ const CartView = () => {
   }, [cart]);
 
   const handleRemoveFromCart = (product) => {
-    removeFromCart(product);
-  };
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Realmente quieres eliminar este producto del carrito?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      confirmButtonColor: '#000c43c9',
+      cancelButtonText: 'Cancelar',
+      cancelButtonColor: '#c9000c',
+      color: 'black',
+      customClass: {
+        confirmButton: 'btn-success',
+        cancelButton: 'btn-cancel',
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeFromCart(product);
+        Swal.fire({
+          title: 'Producto eliminado',
+          icon: 'success',
+          confirmButtonColor: '#000c43c9',
+          color: 'black',
+        });
+      }
+    });
+  };  
 
   const handleRemoveAllFromCart = () => {
     Swal.fire({
