@@ -5,6 +5,5 @@ const ItemListContainer = () => {
   return <ItemList />;
 }
 
-{greeting}
 
 export default ItemListContainer;
