@@ -12,3 +12,7 @@ p {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 100;
 }
+
+.ReactToastify__close-button {
+    color: black; 
+  }

@@ -1,4 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 import NavBar from './components/navBar/navBar.jsx'
 import ItemListContainer from './components/itemListContainer/itemListContainer.jsx';
@@ -24,6 +26,7 @@ function App() {
             <Route path="/order" element={<Order />} />
           </Routes>
         </CartProvider>
+        <ToastContainer />
       </BrowserRouter>
     </>
   );
