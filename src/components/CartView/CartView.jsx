@@ -67,7 +67,7 @@ const CartView = () => {
         removeAllFromCart();
         Swal.fire({
           title: 'Carrito vaciado!!',
-          icon: 'succsess',
+          icon: 'success',
           confirmButtonColor: '#000c43c9',
           color: 'black',
         });
